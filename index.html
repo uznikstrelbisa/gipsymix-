@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Меню Клуба</title>
     <style>
         body {
@@ -57,87 +58,31 @@
             padding: 8px 12px;
             border-radius: 5px;
             font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        #categoryButtons {
-            margin-bottom: 30px;
-        }
-        #categoryButtons button {
-            margin: 5px;
-            padding: 10px 20px;
+        .remove-btn {
+            margin-left: 10px;
+            background-color: #aa3333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Меню Клуба</h1>
 
-    <div id="categoryButtons">
-        <button onclick="showSection('salads')">Салаты</button>
-        <button onclick="showSection('cold')">Холодные закуски</button>
-        <button onclick="showSection('hot')">Горячие закуски</button>
-        <button onclick="showSection('pizza')">Пицца и выпечка</button>
-    </div>
-
-    <button id="backButton" onclick="showAllSections()" style="display:none; margin-bottom: 30px;">Назад</button>
-
     <div id="menu">
-
-        <div class="menu-section" data-section="salads">
+        <!-- Оставь здесь все разделы меню как раньше — они не изменились -->
+        <!-- Пример одного блюда: -->
+        <div class="menu-section">
             <h2>Салаты</h2>
             <ul>
-                <li>Салат с семгой и вялеными томатами <button onclick="addOrder('Салат с семгой и вялеными томатами')">Заказать</button></li>
                 <li>Цезарь с курицей <button onclick="addOrder('Цезарь с курицей')">Заказать</button></li>
-                <li>Салат с говяжьей вырезкой, свежими овощами и ореховым соусом <button onclick="addOrder('Салат с говяжьей вырезкой, свежими овощами и ореховым соусом')">Заказать</button></li>
-                <li>Салат с баклажанами, спелыми томатами и сыром фета <button onclick="addOrder('Салат с баклажанами, спелыми томатами и сыром фета')">Заказать</button></li>
-                <li>Фермерский салат с говядиной в азиатском стиле <button onclick="addOrder('Фермерский салат с говядиной в азиатском стиле')">Заказать</button></li>
-                <li>Сочный греческий салат с брынзой <button onclick="addOrder('Сочный греческий салат с брынзой')">Заказать</button></li>
-                <li>Цезарь с креветками и лососем <button onclick="addOrder('Цезарь с креветками и лососем')">Заказать</button></li>
-                <li>Салат из говядины со стручковой фасолью <button onclick="addOrder('Салат из говядины со стручковой фасолью')">Заказать</button></li>
-                <li>Салат с сочной говядиной и картофелем пай <button onclick="addOrder('Салат с сочной говядиной и картофелем пай')">Заказать</button></li>
-                <li>Салат с копчёной курицей и виноградом <button onclick="addOrder('Салат с копчёной курицей и виноградом')">Заказать</button></li>
-            </ul>
-        </div>
-
-        <div class="menu-section" data-section="cold">
-            <h2>Холодные закуски</h2>
-            <ul>
-                <li>Рыбное ассорти <button onclick="addOrder('Рыбное ассорти')">Заказать</button></li>
-                <li>Карпаччо из семги с гренками <button onclick="addOrder('Карпаччо из семги с гренками')">Заказать</button></li>
-                <li>Сырная тарелка <button onclick="addOrder('Сырная тарелка')">Заказать</button></li>
-                <li>Мясное ассорти <button onclick="addOrder('Мясное ассорти')">Заказать</button></li>
-                <li>Тарелка с соленьями <button onclick="addOrder('Тарелка с соленьями')">Заказать</button></li>
-                <li>Ассорти свежих овощей <button onclick="addOrder('Ассорти свежих овощей')">Заказать</button></li>
-                <li>Скумбрия с запечённым картофелем <button onclick="addOrder('Скумбрия с запечённым картофелем')">Заказать</button></li>
-                <li>Язык на гриле с кисло-сладким соусом и горчицей <button onclick="addOrder('Язык на гриле с кисло-сладким соусом и горчицей')">Заказать</button></li>
-                <li>Оливки и маслины <button onclick="addOrder('Оливки и маслины')">Заказать</button></li>
-                <li>Лимон <button onclick="addOrder('Лимон')">Заказать</button></li>
-            </ul>
-        </div>
-
-        <div class="menu-section" data-section="hot">
-            <h2>Горячие закуски</h2>
-            <ul>
-                <li>Пивной сет №1 <button onclick="addOrder('Пивной сет №1')">Заказать</button></li>
-                <li>Пивной сет №2 <button onclick="addOrder('Пивной сет №2')">Заказать</button></li>
-                <li>Колбаски на углях <button onclick="addOrder('Колбаски на углях')">Заказать</button></li>
-                <li>Колбаски охотника <button onclick="addOrder('Колбаски охотника')">Заказать</button></li>
-                <li>Куриные наггетсы <button onclick="addOrder('Куриные наггетсы')">Заказать</button></li>
-                <li>Сырные палочки <button onclick="addOrder('Сырные палочки')">Заказать</button></li>
-                <li>Чесночные гренки <button onclick="addOrder('Чесночные гренки')">Заказать</button></li>
-            </ul>
-        </div>
-
-        <div class="menu-section" data-section="pizza">
-            <h2>Пицца и выпечка</h2>
-            <ul>
-                <li>Фирменная «Гипси» <button onclick="addOrder('Фирменная «Гипси»')">Заказать</button></li>
-                <li>Пепперони <button onclick="addOrder('Пепперони')">Заказать</button></li>
-                <li>Цезарь пицца <button onclick="addOrder('Цезарь пицца')">Заказать</button></li>
-                <li>4 сыра <button onclick="addOrder('4 сыра')">Заказать</button></li>
-                <li>Маргарита <button onclick="addOrder('Маргарита')">Заказать</button></li>
-                <li>Техас <button onclick="addOrder('Техас')">Заказать</button></li>
-                <li>Сырная лепешка <button onclick="addOrder('Сырная лепешка')">Заказать</button></li>
-                <li>Хачапури по-аджарски <button onclick="addOrder('Хачапури по-аджарски')">Заказать</button></li>
-                <li>Хлебная корзина <button onclick="addOrder('Хлебная корзина')">Заказать</button></li>
             </ul>
         </div>
     </div>
@@ -149,33 +94,23 @@
 
     <script>
         const orderList = document.getElementById('orderList');
-        const sections = document.querySelectorAll('.menu-section');
-        const backButton = document.getElementById('backButton');
-        const categoryButtons = document.getElementById('categoryButtons');
 
         function addOrder(item) {
             const li = document.createElement('li');
-            li.textContent = item + ' — ' + new Date().toLocaleTimeString();
+            const span = document.createElement('span');
+            span.textContent = item + ' — ' + new Date().toLocaleTimeString();
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Удалить';
+            removeBtn.className = 'remove-btn';
+            removeBtn.onclick = () => {
+                orderList.removeChild(li);
+            };
+
+            li.appendChild(span);
+            li.appendChild(removeBtn);
             orderList.appendChild(li);
         }
-
-        function showSection(name) {
-            sections.forEach(sec => {
-                sec.style.display = sec.dataset.section === name ? 'block' : 'none';
-            });
-            categoryButtons.style.display = 'none';
-            backButton.style.display = 'inline-block';
-        }
-
-        function showAllSections() {
-            sections.forEach(sec => sec.style.display = 'none');
-            categoryButtons.style.display = 'block';
-            backButton.style.display = 'none';
-        }
-
-        window.onload = () => {
-            showAllSections(); // Скрываем всё, показываем кнопки выбора
-        };
     </script>
 </body>
 </html>
